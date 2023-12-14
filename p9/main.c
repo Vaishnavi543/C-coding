@@ -4,7 +4,11 @@
  *  Created on: 14-Dec-2023
  *      Author: lenovo
  */
-#include<stdio.h>
+// 1.15 functions
+//temp covertion table using function
+
+
+/*#include<stdio.h>
 int power(int m,int n);
 main()
 {
@@ -18,12 +22,41 @@ return 0;
 
 int power(int base,int n)
 {
-	int i,p;
-	p=1;
-	for(i=1;i<=n;++i)
+	int p;
+
+	for(p=1;n>0;--n)
 	p=p*base;
 return p;
+}*/
+
+
+//celcius to fahrenheit table
+
+#include<stdio.h>
+
+int fahrenheit (int cel)
+{
+   int fah;
+   fah=(cel*(9/5))+32;
+   return fah;
 }
+int main()
+{
+    int cel,fah,lower,upper,step;
+    lower=(-10);
+    upper=40;
+	step=5;
+
+    printf("celcius to fahrenheit convertion table\n");
+    for(fah=upper;fah>=lower;fah=fah-step)
+    {
+       printf("%d\t%d\n",cel,fah);
+
+       return 0;
+    }
+}
+
+
 
 
 
