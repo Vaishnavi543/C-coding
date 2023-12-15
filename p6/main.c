@@ -12,23 +12,33 @@ int  main ()
 {
    int c;
    while ((c=getchar())!='z')
+
    {
 	   if(c=='\t')
    {
-	   printf("\t");
+	   printf("\t\t");
    }
-	   if(c=='\b')
+	   else if(c=='\b')
 	   {
-		   printf("\b");
+		   printf("\b\b");
 	   }
-	   if(c=='\\')
+	   else if(c=='\\')
 			   {
-					   printf("\\");
+					   printf("\\\\");
 			   }
 					   }
-   {
+
    putchar(c);
-   c=getchar();
- }
+
+
 }
 
+/*
+#include<stdio.h>
+int main()
+{
+	int c;
+	 while ((c=getchar()) != 'z')
+		 putchar(c);
+}
+*/

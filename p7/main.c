@@ -15,8 +15,7 @@ int  main ()
 		   if(c!=' ')
 		   {
 
-
-			  putchar(c);
+			   putchar(c);
 	   }
 		   else
 		   {

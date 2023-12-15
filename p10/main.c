@@ -5,7 +5,7 @@
  *      Author: lenovo
  */
 //1.18 write a program to remove trailing blanks and tabs from each line of input and to delete entirely blanck lines.
-/*#include<stdio.h>
+#include<stdio.h>
 #define MAXLINE 1000
 int gl(char line[],int maxline);
 void copy (char to[],char from[]);
@@ -46,6 +46,6 @@ void copy(char to[],char from[])
 	i=0;
 	while((to[i]=from[i])!='\0')
 		++i;
-}*/
+}
 
 

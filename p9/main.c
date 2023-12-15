@@ -30,32 +30,28 @@ return p;
 }*/
 
 
-//celcius to fahrenheit table
+// fahrenheit to celcius table
 
 #include<stdio.h>
-
-int fahrenheit (int cel)
-{
-   int fah;
-   fah=(cel*(9/5))+32;
-   return fah;
-}
+int conv(int);
 int main()
 {
-    int cel,fah,lower,upper,step;
-    lower=(-10);
-    upper=40;
-	step=5;
-
-    printf("celcius to fahrenheit convertion table\n");
-    for(fah=upper;fah>=lower;fah=fah-step)
-    {
-       printf("%d\t%d\n",cel,fah);
-
-       return 0;
-    }
+int fah,cal;
+int lower=0,upper=300;
+fah=lower;
+while(fah<=upper){
+	cal=conv(fah);
+	printf("%d\t%d\n",fah,cal);
+	fah=fah+20;
 }
-
+return 0;
+}
+int conv(int fah)
+{
+	int cal;
+	cal=(fah-32)*5/9;
+	return cal;
+}
 
 
 
