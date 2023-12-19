@@ -16,11 +16,12 @@ int  main ()
     ++nl;
     if(c==' ')
     ++b;
-    if(c=='\t')
+    if(c=='\\t')
     ++t;
 
    }
    printf("%d %d %d\n",nl,b,t);
 }
+
 
 

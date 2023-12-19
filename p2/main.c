@@ -11,15 +11,15 @@ int main()
 {
     int cel,fah;
     int lower,upper,step;
-    lower=-10;
-    upper=40;
+    lower=-100;
+    upper=150;
     step=5;
     cel=lower;
     printf("celcius to fahrenheit convertion table\n");
     while(cel<=upper)
     {
         fah=(cel*(9/5))+32;
-        printf("%d\t%d\n",cel,fah);
+        printf("%4d\t%4d\n",cel,fah);
         cel=cel+step;
     }
 }

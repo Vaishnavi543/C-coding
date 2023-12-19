@@ -16,29 +16,19 @@ int  main ()
    {
 	   if(c=='\t')
    {
-	   printf("\t\t");
+	   printf("\t");
    }
-	   else if(c=='\b')
+	   if(c=='\b')
 	   {
-		   printf("\b\b");
+		   printf("\b");
 	   }
-	   else if(c=='\\')
+	   if(c=='\\')
 			   {
-					   printf("\\\\");
+					   printf("\\");
 			   }
-					   }
+
 
    putchar(c);
-
-
+}
 }
 
-/*
-#include<stdio.h>
-int main()
-{
-	int c;
-	 while ((c=getchar()) != 'z')
-		 putchar(c);
-}
-*/
