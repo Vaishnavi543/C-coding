@@ -10,27 +10,28 @@
 int main()
 
 {
-	char input[100];
-	char output[100];
-	int c;
-	int i=0 ;
+	char s1[100];
+	char s2[100];
+	int length=0;
+	int i=0,j=0 ;
 
 	printf("enter a string:");
-
 	fflush(stdout);
+	scanf("%[^\n]",s1);
+	fflush(stdout);
+	printf("length of the string is :%d\n",strlen(s1));
 
-	while ((c=getchar())!='z')
+	length = strlen(s1);
+	for(i=length-1;i>=0;i--)
 	{
-			input[i]=c;
-			for(i=0;i<='/0';i++)
-			printf("entered string : %c",input[i]);
-			fflush(stdout);
 
+		s2[j++]=s1[i];
 		}
-	for (i='\0';i>=0;i--)
-	{
-		printf("reverse string : %c",output[i]);
-	}
+	s2[j]='\0';
+	printf("entered string:%s\n",s1);
+	fflush(stdout);
+	printf("reversed string:%s",s2);
+	fflush(stdout);
 	return 0;
 }
 

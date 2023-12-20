@@ -7,28 +7,17 @@
  */
 //2.10
 //write the function lower which converts upper case letter to lower case using conditional operation
-#include <stdio.h>
+#include<stdio.h>
+char lower(char c);
 int main()
 {
-	char str[100];
-	char c;
-	int i;
-	printf("enter a string: ");
-	fflush(stdout);
-	scanf("%c",str);
-	fflush(stdout);
-	for(i=0;i!=' ';i++)
-	str[i]=c;
-	printf("entered string:%c | converted string:%c\n",str,(c>='A' && c<='Z' ? (c+'a'-'A') : c));
-	fflush(stdout);
+	char c ;
+	printf("enter a character:",c);
+	scanf("%c",&c);
+	putchar(lower(c));
+	return 0;
 }
-
-/*
-for(i=0;i<lim-1 && (c=getchar())!='z' && c!='\n';++i)
-		s[i]=c;
-	if(c=='\n'){
-		s[i]=c;
-		++i;
-	}
-	s[i]='\0';
-	return i;*/
+char lower(char c)
+{
+	return((c>='A' && c<='Z') ? (c=c+'a'-'A') : c);
+}

@@ -13,40 +13,41 @@
 
 int main()
 {
-	char s1[100] = "abcd efg";
-	char s2[100]= "ab";
-	//char s[100];
-	int i,j ;
-	//int k=0;
-//	printf("string1 is :  ");
-////	fflush(stdout);
+	char s1[100]="abcd pqr ab" ;
+	char s2[100]="b";
+	char s3[100];
+	int i;
+	int j;
+	int k=0 ;
+	int flag=0;
+	printf("string1 is:%s\n",s1);
+//	fflush(stdout);
 //	scanf("%s",s1);
-//	//fflush(stdout);
-//
-////	printf("string2 is : ");
-//	//fflush(stdout);
+//	fflush(stdout);
+
+	printf("string2 is:%s\n",s2);
+//	fflush(stdout);
 //	scanf("%s",s2);
-	//fflush(stdout);
+//	fflush(stdout);
 
 	for (i=0;s1[i]!='\0';i++)
 	{
-		for (j=0;s2[j]!='\0';j++)
+		flag=0;
+		for (j=0;s2[j];j++)
+
 		{
-			if (s1[i]!=s2[j])
+			if (s2[j]==s1[i])
 			{
-
-				printf("%c",s1[i]);
+				flag=1;
 			}
-
-			else
-				{
-				 break;
-				}
-				}
-
 		}
-
-	return 0;
-	}
+			if(flag==0)
+			{
+				s3[k++]=s1[i];
+			}
+			s3[k]='\0';
+}
+	printf("squeezed string1 :%s",s3);
+}
 
 
