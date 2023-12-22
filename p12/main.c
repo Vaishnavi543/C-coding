@@ -12,11 +12,12 @@
 int main()
 
 {
-	char s1[100];
+	char s1[]="abc //xyz";
+	int i,j=0;
 	char s2[100];
-	int i=0,j=0;
-	printf("enter a string :");
-	fflush(stdout);
+//	char s2[100];
+//	int i=0,j=0;
+	printf("entered string is = %s",s1);
 	scanf("%s",s1);
 	fflush(stdout);
 
@@ -26,7 +27,7 @@ int main()
 		{
 			while(s1[i]!='\n' && s1[i]!='\0')
 			{
-				j++;
+				i++;
 			}
 		}
 		else
@@ -35,10 +36,7 @@ int main()
 		}
 	}
 	s2[j]='\0';
-	for(i=0;i<=j;i++)
-	{
-		s1[i]=s2[j];
-	}
+
 	printf("comment removed string= %s",s2[j]);
 	return 0;
 }
