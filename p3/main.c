@@ -4,7 +4,7 @@
  *  Created on: 14-Dec-2023
  *      Author: lenovo
  */
-//1.5
+//1.5 fah to celcius
 #include<stdio.h>
 int main()
 {

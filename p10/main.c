@@ -4,7 +4,7 @@
  *  Created on: 14-Dec-2023
  *      Author: lenovo
  */
-//1.18 write a program to remove trailing blanks and tabs from each line of input and to delete entirely blanck lines.
+//1.18 write a program to remove trailing blanks and tabs from each line of input and to delete entirely blank lines.
 
 
 #include<stdio.h>
@@ -28,14 +28,9 @@ int main()
 		 else
 		 {
 			 putchar(c);
-		 	}
-
-
+		 }
 	}
-
-
-
-return 0;
+	return 0;
 }
 
 

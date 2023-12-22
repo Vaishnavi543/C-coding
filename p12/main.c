@@ -12,32 +12,39 @@
 int main()
 
 {
-	char s[100];
-	int i=0;
+	char s1[100];
+	char s2[100];
+	int i=0,j=0;
 	printf("enter a string :");
 	fflush(stdout);
-	scanf("%[^z]",s);
+	scanf("%s",s1);
 	fflush(stdout);
+
+	for(i=0;s1[i];i++)
 	{
-		for(i=0;s[i];i++)
+		if(s1[i]=='/' && s1[i+1]=='/')
 		{
-			if(s[i]=='/' && s[i+1]=='/')
+			while(s1[i]!='\n' && s1[i]!='\0')
 			{
-				for(i=0;s[i];i++)
-				{
-					if(s[i]=='\n')
-					{
-						s[i]=s[i+1];
-					}
-					break;
-				}
+				j++;
 			}
 		}
-		printf("comment removed string= %c",s[i]);
+		else
+		{
+			s1[i++]=s2[j++];
+		}
 	}
-
-
-return 0;
+	s2[j]='\0';
+	for(i=0;i<=j;i++)
+	{
+		s1[i]=s2[j];
+	}
+	printf("comment removed string= %s",s2[j]);
+	return 0;
 }
+
+
+
+
 
 

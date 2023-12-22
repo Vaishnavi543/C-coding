@@ -10,27 +10,33 @@
 #include<string.h>
 int main()
 {
-int i=0;
-int loop=1;
-{
-while(loop)
-{
-	if(i>=lim-1)
+	int i=0,c=0;
+	int flag=0;
+	int lim;
+	for(i=0; ;i++)
 	{
-		loop=0;
+		if (i>=(lim-1))
+		{
+			break;
+		}
+		if((c=getchar())=='\n')
+		{
+			break;
+		}
+		if(c=='z')
+		{
+			break;
+			{
+				i++;
+			}
+		}
+
 	}
-	else if((c=getchar())=='\n')
-	{
-		loop=0;
-	}
-	else if(c=='z')
-	{
-		loop=0;
-	}
-s[i++]=c;
+
+	printf("hello");
+
 }
-}
-}
+
 
 
 
