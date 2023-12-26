@@ -36,36 +36,7 @@
 //
 //}
 
-//#include<stdio.h>
-//#include<string.h>
-//int main()
-//
-//{
-//	char input[100];
-//	int c;
-//	int i=0 ;
-//
-//	printf("enter a string:");
-//	fflush(stdout);
-//	while ((c=getchar())!='z')
-//
-//	{
-//		 if(c=='\n' || c=='\t' )
-//		 {
-//			 c=='\b';
-//		 }
-//		 else
-//		 {
-//			 putchar(c);
-//		 	}
-//
-//
-//	}
-//
-//
-//
-//return 0;
-//}
+//switch function for /t and /n
 
 
 #include<stdio.h>
