@@ -4,6 +4,7 @@
  *  Created on: 25-Dec-2023
  *      Author: lenovo
  */
+//32 bit number binary
 #include<stdio.h>
 #include<string.h>
 int main()
@@ -50,7 +51,7 @@ int main()
 //}
 
 {
-	int a=0xaa;
+	int a=0xa;
 	int b=0;
 	int i;
 

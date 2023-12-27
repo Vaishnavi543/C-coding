@@ -4,6 +4,7 @@
  *  Created on: 25-Dec-2023
  *      Author: lenovo
  */
+//bitwise operator odd/even
 #include<stdio.h>
 int main()
 {

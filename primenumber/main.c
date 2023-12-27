@@ -12,17 +12,22 @@ int main()
 	{
 		for(j=1;j<=7;j++)
 		{
-			if(((i/j)==i) && ((i/j)==1))
+			if((i/j)==i)
 			{
-				break;
+				if((i/j)==1)
+				{
+					printf("%d ",i);
+				}
+
+				else
+				{
+					break;
+				}
 			}
-			else
-			{
-				printf("%d ",i);
-			}
+
+
 		}
-
-
 	}
 }
+
 

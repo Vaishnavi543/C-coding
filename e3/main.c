@@ -4,6 +4,7 @@
  *  Created on: 25-Dec-2023
  *      Author: lenovo
  */
+//return particular byte of given number input 4 byte
 #include<stdio.h>
 int main()
 {

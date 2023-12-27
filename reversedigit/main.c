@@ -7,12 +7,12 @@
 #include<stdio.h>
 int main()
 {
-	int d,r,a;
+	int d,r;
 //	printf("enter a digit:");
 //	fflush(stdout);
 //	scanf("%d",&d);
 //	fflush(stdout);
-	for(d=12345;r!=0;d--)
+	for(d=123;r!=0;d--)
 	{
 		r=d%10;
 		printf("%d",r);
