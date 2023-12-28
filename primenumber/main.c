@@ -10,23 +10,21 @@ int main()
 	int i,j;
 	for(i=2;i<=100;i++)
 	{
-		for(j=1;j<=7;j++)
+		for(j=2;j<i;j++)
 		{
-			if((i/j)==i)
-			{
-				if((i/j)==1)
-				{
-					printf("%d ",i);
-				}
 
-				else
-				{
-					break;
-				}
+			if(i%j==0)
+			{
+				break;
 			}
 
 
 		}
+		if (j==i)
+					{
+						printf("%d  ",j);
+					}
+
 	}
 }
 

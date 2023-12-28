@@ -4,6 +4,7 @@
  *  Created on: 26-Dec-2023
  *      Author: lenovo
  */
+//reverse digit
 #include<stdio.h>
 int main()
 {

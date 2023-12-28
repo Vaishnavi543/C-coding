@@ -9,12 +9,13 @@
 //position of the rightmost occurance of t in s
 #include<stdio.h>
 #include<string.h>
+#include "mystrlen.h"
 int strrindex(char *s,char a)
 {
 
 	int length;
 	int i;
-	length=strlen(s);
+	length=mystrlen(s);
 	printf("%d\n",length);
 	fflush(stdout);
 	for(i=length-1;i>=0;i--)
