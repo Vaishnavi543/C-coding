@@ -9,24 +9,26 @@
 #include<stdio.h>
 char itoa(int a,char* b)
 {
-	static int i=0;
-//	static char b[10];
+
+	//	static char b[10];
 	if(a!=0)
 	{
-	b[i]=a%10+'0';
-	++i;
-	itoa((a/10),b[++i]);
+		  *b=a%10+'0';
+		itoa((a/10),++b);
 
-//	return b[i];
+		//	return b[i];
 	}
+	else
+	{
+		return 0;
 }
 int main()
 {
 	int p=1234;
 	char q[10];
-	char r[10];
-	r=itoa(p,q);
-	printf("%s",r);
+
+	itoa(p,q);
+	printf("%s",q);
 	fflush(stdout);
 }
 

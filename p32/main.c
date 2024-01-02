@@ -55,17 +55,21 @@ int main()
 		{
 			switch(c)
 			{
-			case '\t' :
-				printf("\\t",s1);
-				break;
-
-			case '\n' :
-				printf("\\n",s1);
-break;
+			default:
+			printf("n");
+			case 'a':
+				printf("a");
+//			case '\t' :
+//				printf("\\t",s1);
+//				break;
+//
+//			case '\n' :
+//				printf("\\n",s1);
+//break;
 
 
 			}
-			putchar(c);
+//			putchar(c);
 		}
 
 	return 0;

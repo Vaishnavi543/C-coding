@@ -33,21 +33,21 @@
 char reverse(char* s)
 {
 	static int i=0;
-	static int j=0;
+	int j=0;
 	int length;
 	int temp=0;
-	for(i=0;s[i];i++);
-	length=i-1;
+	for(j=0;s[j];j++);
+	length=j-1;
 
 			temp=s[i];
 			s[i]=s[length-i];
 			s[length-i]=temp;
 			if (i!=(length/2))
 			{
-				s[j]=s[i];
+			++i;
 				reverse(s);
 			}
-			s[j]='\0';
+			//s[i]='\0';
 
 
 }
