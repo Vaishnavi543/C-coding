@@ -34,7 +34,7 @@ int main()
 		else
 		{
 			d[k]='\0';
-			printf("%s\n",d);
+			//printf("%s\n",d);
 						fflush(stdout);
 			break;
 		}
@@ -72,7 +72,7 @@ int main()
 			//printf("%d",v);
 			//scanf("%d",&v);
 			w=calc( v,s[j+2],z);
-			printf("%d",w);
+			//printf("%d",w);
 			//scanf("%d",&w);
 			break;
 		}

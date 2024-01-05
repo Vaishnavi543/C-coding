@@ -22,12 +22,20 @@ int main()
 {
 	int m;
 	tail_n(m,p);
-	for(m=9;m<=0;m--)
+	for(m=0;m<=14;m++)
+	{
+		printf("%s\n",p[m]);
+		fflush(stdout);
+	}
+	printf("\n \n");
+	for(m=14;m>=5;m--)
 	{
 		printf("%s\n",p[m]);
 		fflush(stdout);
 	}
 }
+//ptr = ( cast_ type *) malloc (byte_size);
+//p=(int *)malloc(numofe*sizeof(int));
 
 
 
