@@ -1,12 +1,9 @@
 /*
  * main.c
  *
- *  Created on: 05-Jan-2024
+ *  Created on: 06-Jan-2024
  *      Author: lenovo
  */
-//5.18
-//dcl
-//char(*(*X())[])()
 #include<stdio.h>
 int main()
 {
@@ -53,10 +50,4 @@ for(i=0;s[i]!=s[j-4];i++)
 }
 }
 }
-
-
-
-
-
-
 
