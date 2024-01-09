@@ -67,7 +67,6 @@ keytab[] ={
 		{"const",0},
 		{"continue",0},
 		{"default",0},
-		{/* . . . */},
 		{"unsigned",0},
 		{"void",0},
 		{"volatile",0},
@@ -76,78 +75,38 @@ keytab[] ={
 #define NKEYS (sizeof keytab/sizeof keytab[0])
 int main()
 {
-	char a[]={"auto break case break default void while auto volatile"};
+	char a[]="auto break case break default void while auto volatile ";
 	char b[100];
 	int i,j=0,k=0;
 	for(i=0;a[i];i++)
 	{
-		b[i]=a[i];
-		if(a[i]==' ')
+		b[k]=a[i];
+		k++;
+		if((a[i]==' ') || (a[i]=='\0'))
 		{
-			b[i]='\0';
-			printf("%s ",b);
-			//fflush(stdout);
+			if(a[i] == '\0')
+			{
+				b[k]='\0';
+			}
+			else
+			{
+				b[k-1]='\0';
+			}
+			k=0;
 			for(j=0;j<NKEYS;j++)
 			{
 				int x=strcmp(b,keytab[j].word);
 				if(x==0)
 				{
-					printf("%s ",b);
 					keytab[j].count++;
-
+					break;
 				}
-				break;
 			}
 		}
 	}
-
+	for(j=0;j<NKEYS;j++)
+	{
 		printf("%s  %d\n",keytab[j].word,keytab[j].count);
 		fflush(stdout);
-
+	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

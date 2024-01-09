@@ -8,8 +8,8 @@
 #include "mystrcmp.h"
 int main()
 {
-	char a[]="abcde";
-	char b[]="abcd";
+	char a[]="abcd";
+	char b[]="abcdef";
 	int c;
 	if (mystrcmp(a,b,c)==1)
 		printf("%s and %s are same",a,b);

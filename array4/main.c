@@ -8,14 +8,21 @@
 #include<stdio.h>
 int main()
 {
-	int a[]={5,10,15,20,25,30};
-	int n=4,i=0;
-	for(i=0;i<=5;i++)
+	int a[]={1,2,3,4,5,6,7,8,9,10};
+	int n=4,i=0,j=0;
+	int length=sizeof(a)/sizeof(a[0]);
+
 	{
-	if(i==(n-1))
-	continue;
-	printf("%d ",a[i]);
+		for(j=n-1;j<=length-1;j++)
+		{
+			a[j]=a[j+1];
+		}
+		for(int i=0;i<length-1;i++)
+		{
+			printf("%d ",a[i]);
+		}
+	}
 }
-}
+
 
 
