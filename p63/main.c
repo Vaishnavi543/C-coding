@@ -10,22 +10,35 @@
 #include<string.h>
 int main()
 {
-	char a[]="the best end";
-	char b[10];
+	char a[]="the best end ";
+	char b[20];
 	char t[]="the";
 	char e[]="end";
 	int i,j;
 	for(i=0,j=0;a[i];i++)
 	{
-		b[i]=a[i];
+		b[j]=a[i];
+		j++;
 		if(a[i]==' ')
 		{
-			b[i]='\0';
-			if(b[i]==t[i] || b[i]==e[i])
+			b[j-1]='\0';
 			{
+			if(strcmp(t,b)==0 || strcmp(e,b)==0)
+			{
+				for(i=0;a[i];i++,j++)
+				a[i]=a[j];
 
 			}
+			else
+			{
+				printf("%s",a);
+				fflush(stdout);
+			}
+			}
+			j=0;
+			i=0;
 		}
+
 	}
 }
 

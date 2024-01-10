@@ -7,7 +7,32 @@
 //write a program that reads a c program and prints in alphabetical order each group of variable names
 //that are identical in first 6 characters but different somewhere thereafter.make 6 a parameter that
 //can be set from the command line.
-#if 1
+#if 0
+//char t[6];
+//	{
+//		for(j=0,i=0;s[i][j];j++)
+//		{
+//			if(s[i][j]==' ')
+//			{
+//				for(p=0,k=0;p<=6;p++,k++)
+//				{
+//					t[k]=s[i][j+1];
+//					j++;
+//				}
+//
+//				if(strncmp(t,c,6)==0)
+//				{
+//					bootlo++;
+//				}
+//
+//				i++;
+//				j=0;
+//			}
+//
+//		}
+//		printf("bootlo=%d\n",bootlo);
+//	}
+//}
 #include<stdio.h>
 struct linked{
 	int i;
@@ -39,42 +64,74 @@ int main()
 	fflush(stdout);
 	//	printf("%d %c",b.i,b.c);
 	//		fflush(stdout);
+	//	if(strncmp(t,x,6)==0)
+	//						{
+	//							count=count+1;
+	//							printf("%s %d\n",t,count);
+	//							fflush(stdout);
+	//						}
+	//						else
+	//						{
+	//							count=1;
+	//							printf("%s %d\n",t,count);
+	//							fflush(stdout);
+	//						}
+	//						strcpy(x,t);
+	//						i++;
+	//						j=0;
 }
 #endif
-
-#if 0
+//strncmp(string1,string2,number of elements to compare)
+#if 1
 #include<stdio.h>
 #include<string.h>
 int main()
 {
-	int i,x,k,j,m;
-	char c[]="insert";
-	char s[]="insertoff inout inserton ";
-	char s2[7];
-	char a[20];
-	for(i=0,j=i;s[i];i++,j++)
+	int i,j,k,x;
+	int count=1;
+	char s[][25]={"void variable_rollback ",
+			"int bootloader",
+			"int variable",
+			"int bootloader_reset",
+			"int bootloader_update",
+			};
+	char t[7];
 	{
-		a[m]=s[i];
-		m++;
-		if(s[i]==' ')
+		for(j=0,i=0;s[i][j];j++)
+			if(s[i][j]==' ')
+			{
+				for(k=0;k<6;k++)
+				{
+					t[k]=s[i][j+1];
+					j++;
+				}
+				t[k]='\0';
+				strcpy(s[i],t);
+				i++;
+				j=0;
+			}
+	}
+	i=0;
+	for(int p=0;p<=4;p++)
+	{
+		x=strcmp(s[i],s[i+1]);
+		//printf("%s%s\t",s[i],s[i+1]);
+		//fflush(stdout);
+		if(x==0)
 		{
-			a[m-1]='\0';
-			for(j=0;j<6;j++)
-			{
-				s2[j]=s[j];
-			}
-			s2[j]='\0';
-			x=strcmp(s2,c);
-			if(x==0)
-			{
-				printf("%s",a);
-
-			}
-			m=0;
+			count++;
+			strcpy(s[i+1],s[i+2]);
+			strcpy(s[i+2],s[i+3]);
+			strcpy(s[i+3],s[i+4]);
+		}
+		else
+		{
+			i++;
 		}
 
 	}
 
+	printf("\n%s - %d",s,count);
+	fflush(stdout);
 }
 #endif
-//"insertinclude inout inserton"

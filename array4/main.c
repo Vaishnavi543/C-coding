@@ -8,21 +8,34 @@
 #include<stdio.h>
 int main()
 {
-	int a[]={1,2,3,4,5,6,7,8,9,10};
-	int n=4,i=0,j=0;
+	int a[]={5,10,15,20,25,50,100};
+	int n,j=0,k=0;
+	printf("enter a number:");
+	fflush(stdout);
+	scanf("%d",&n);
+	fflush(stdout);
+	printf("entered number is %d\n",n);
+	fflush(stdout);
 	int length=sizeof(a)/sizeof(a[0]);
-
 	{
-		for(j=n-1;j<=length-1;j++)
+		for(k=0;k<=length;k++)
 		{
-			a[j]=a[j+1];
-		}
-		for(int i=0;i<length-1;i++)
-		{
-			printf("%d ",a[i]);
+			if(a[k]==n)
+			{
+				printf("position of %d is %d\n",n,k+1);
+				fflush(stdout);
+				for(j=k;j<=length-1;j++)
+				{
+					a[j]=a[j+1];
+				}
+				for(int i=0;i<length-1;i++)
+				{
+					printf("%d ",a[i]);
+				}
+				break;
+			}
 		}
 	}
 }
-
 
 
