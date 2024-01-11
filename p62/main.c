@@ -4,6 +4,7 @@
  *  Created on: 09-Jan-2024
  *      Author: lenovo
  */
+//6.2
 //write a program that reads a c program and prints in alphabetical order each group of variable names
 //that are identical in first 6 characters but different somewhere thereafter.make 6 a parameter that
 //can be set from the command line.
@@ -62,23 +63,6 @@ int main()
 	e.p=NULL;
 	printf("%d %c\n",a.i,a.c);
 	fflush(stdout);
-	//	printf("%d %c",b.i,b.c);
-	//		fflush(stdout);
-	//	if(strncmp(t,x,6)==0)
-	//						{
-	//							count=count+1;
-	//							printf("%s %d\n",t,count);
-	//							fflush(stdout);
-	//						}
-	//						else
-	//						{
-	//							count=1;
-	//							printf("%s %d\n",t,count);
-	//							fflush(stdout);
-	//						}
-	//						strcpy(x,t);
-	//						i++;
-	//						j=0;
 }
 #endif
 //strncmp(string1,string2,number of elements to compare)
@@ -89,12 +73,12 @@ int main()
 {
 	int i,j,k,x;
 	int count=1;
-	char s[][25]={"void variable_rollback ",
+	char s[][25]={"void bootloader_rollback ",
 			"int bootloader",
 			"int variable",
 			"int bootloader_reset",
-			"int bootloader_update",
-			};
+			"int variable_update",
+	};
 	char t[7];
 	{
 		for(j=0,i=0;s[i][j];j++)
@@ -111,27 +95,29 @@ int main()
 				j=0;
 			}
 	}
-	i=0;
-	for(int p=0;p<=4;p++)
+	int length = 4;
+	for(int p=0;p<=length;p++)
 	{
-		x=strcmp(s[i],s[i+1]);
-		//printf("%s%s\t",s[i],s[i+1]);
-		//fflush(stdout);
-		if(x==0)
+		for(j=p+1;j<=length;j++)
 		{
-			count++;
-			strcpy(s[i+1],s[i+2]);
-			strcpy(s[i+2],s[i+3]);
-			strcpy(s[i+3],s[i+4]);
-		}
-		else
-		{
-			i++;
-		}
+			x=strcmp(s[p],s[j]);
+			if(x==0)
+			{
+				count++;
+				for(int k=j;k<length;k++)
+				{
+					strcpy(s[k],s[k+1]);
 
+				}
+				length--;
+				j--;
+			}
+		}
+		printf("%s - %d\n",s[p],count);
+		//fflush(stdout);
+		count = 1;
 	}
 
-	printf("\n%s - %d",s,count);
 	fflush(stdout);
 }
 #endif

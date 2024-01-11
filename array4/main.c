@@ -1,10 +1,10 @@
-/*
- * main.c
- *
- *  Created on: 06-Jan-2024
- *      Author: lenovo
- */
-//write a c program to delete an elements at desired position from an array
+///*
+// * main.c
+// *
+// *  Created on: 06-Jan-2024
+// *      Author: lenovo
+// */
+////write a c program to delete an elements at desired position from an array
 #include<stdio.h>
 int main()
 {
@@ -39,3 +39,17 @@ int main()
 }
 
 
+
+
+//#include<stdio.h>
+//int main()
+//{
+//	union temp{
+//		int a;
+//		int b;
+//	}xyz;
+//	xyz.b =20;
+//	xyz.a=10;
+//	printf("%d\n",xyz.a);
+//	printf("%d",xyz.b);
+//}
