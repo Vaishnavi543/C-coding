@@ -1,17 +1,20 @@
 //write a program that converts upper case to lower or lower case to upper,depending on the name it is invoked with,as found in argv[0
 #include<stdio.h>
 #include<ctype.h>
+#include<string.h>
 int main(int argc,char *argv[])
 {
 	char s[]="ABCDxyz";
+	char u[]="upper";
+	char l[]="lower";
 	int i;
 	{
-		if(argv[1] == "upper")
+		if(strcmp(argv[1],u)==0)
 		{
 			for(i=0;s[i];i++)
 			s[i]=toupper(s[i]);
 		}
-		if(argv[1] == "lower")
+		if(strcmp(argv[1],l)==0)
 				{
 			for(i=0;s[i];i++)
 						s[i]=tolower(s[i]);
@@ -19,5 +22,4 @@ int main(int argc,char *argv[])
 
 	}
 	printf("%s\n",s);
-	printf("%s",argv[1]);
 }
