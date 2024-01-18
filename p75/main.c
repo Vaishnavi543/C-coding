@@ -1,14 +1,15 @@
 //calculate word,characters and line of a file.
 #include<stdio.h>
+#include<stdlib.h>
 int main()
 {
 	FILE *fp;
-	int ch,countchar=1,countword=1,countline=1,length=0;
-	fp=fopen("main.txt","r");
-	if(fp=fopen("main.txt","r")==NULL)
+	int ch,countchar=1,countword=1,countline=1;
+	if((fp=fopen("main1.txt","r"))==NULL)
 	{
-		printf("file doesn't exist");
+		printf("error in opening\n");
 		fflush(stdout);
+		exit(1);
 	}
 	while((ch=fgetc(fp))!=EOF)
 	{
@@ -23,8 +24,6 @@ int main()
 			countline++;
 		}
 	}
-	//		printf("%c",ch);
-	//		fflush(stdout);
 	fclose(fp);
 	printf("character count=%d\nword count=%d\nline count=%d",countchar,countword,countline);
 	fflush(stdout);
