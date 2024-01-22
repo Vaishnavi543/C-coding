@@ -1,5 +1,4 @@
-//linked a 5 nodes
-//traverse in linked list
+//add at end in linked list
 #include<stdio.h>
 #include<stdlib.h>
 struct node
@@ -9,7 +8,7 @@ struct node
 };
 int main()
 {
-	struct node *head=NULL,*temp,*temp2;
+	struct node *head=NULL,*temp,*temp2,*ptr;
 	int i,j=5;
 	for(i =0;i<j ; i++)
 	{
@@ -36,6 +35,16 @@ int main()
 		temp->data = i;
 		temp = temp -> next;
 	}
+	//add node at end
+			{
+				if(temp->next == NULL)
+				{
+				ptr->data=5;
+				ptr->next=head;
+				head=ptr;
+				}
+			}
+			j=j+1;
 	temp = head;
 	printf("DATA\n");
 	for(i =0; i<j ; i++)
@@ -45,5 +54,4 @@ int main()
 		temp = temp -> next;
 	}
 }
-
 

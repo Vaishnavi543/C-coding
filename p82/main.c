@@ -1,5 +1,4 @@
-//linked a 5 nodes
-//traverse in linked list
+//add at beginning in linked list
 #include<stdio.h>
 #include<stdlib.h>
 struct node
@@ -7,10 +6,15 @@ struct node
 	int data;
 	struct node *next; //SELF REFERENTIAL STRUCTURE
 };
+int addatbeg(int d,int *ptr,int *h,int k=k+1)
+{
+	ptr->next=h;
+	h=ptr;
+}
 int main()
 {
 	struct node *head=NULL,*temp,*temp2;
-	int i,j=5;
+	int i,j=5,n=10;
 	for(i =0;i<j ; i++)
 	{
 		temp = malloc(sizeof(struct node));
@@ -40,10 +44,12 @@ int main()
 	printf("DATA\n");
 	for(i =0; i<j ; i++)
 	{
+		addatbeg(n,temp,head,j);
 		printf("%d\n", temp->data);
 		fflush(stdout);
 		temp = temp -> next;
 	}
+
 }
 
 

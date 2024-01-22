@@ -20,29 +20,34 @@ int main()
 		count++;
 	}
 	printf("number of strings in a file:%d",count);
-	fflush(stdout);
+	//fflush(stdout);
 	ptr=(char*) malloc (count * (sizeof(char*)));
 	fclose(fp);
 	fp=fopen("main.txt","r");
 	{
-		while(fgets(ptr[i],50,fp)!=NULL)
+		while(fgets(ptr[i]=p,50,fp)!=NULL)
 		//for(i=0;i<count;i++)
 			{
+
+				//ptr[i]=p;
 				ptr[i]=(char*) malloc (100*(sizeof(char)));
-				scanf("%s",ptr[i]);
-				fflush(stdout);
-				printf("%s\n",ptr[i]);
-				fflush(stdout);
-				i++;
-			}
+//				for(i=0;ptr[i]!='\0';i++)
+//				{
+//					ptr[i]=p[i];
+				scanf("%s",ptr);
+				//fflush(stdout);
+				printf("%s\n",ptr);
+								fflush(stdout);
+//			}
 	}
 
-	for(i=0;i<count;i++)
-		{
-			printf("entered string %d:%s\n",i+1,ptr[i]);
-			fflush(stdout);
-		}
+//	for(i=0;i<count;i++)
+//		{
+//			printf("entered string %d:%s\n",i+1,ptr[i]);
+//			fflush(stdout);
+//		}
 	fclose(fp);
+}
 }
 
 
