@@ -1,5 +1,4 @@
-//linked a 5 nodes
-//traverse in linked list
+//deleting the last node
 #include<stdio.h>
 #include<stdlib.h>
 struct node
@@ -7,13 +6,24 @@ struct node
 	int data;
 	struct node *next; //SELF REFERENTIAL STRUCTURE
 };
+
+void deleteatend(struct node *p)
+{
+	struct node *pre;
+	if(p->next!=NULL)
+	{
+		pre=p;
+		p=p->next;
+		free(p);
+	}
+}
 int main()
 {
 	struct node *head=NULL,*temp,*temp2;
-	int i,j,k;
-	printf("enter the number of nodes:");
-	fflush(stdout);
-	scanf("%d",&j);
+	int i,j=5,k;
+//	printf("enter the number of nodes:");
+//	fflush(stdout);
+//	scanf("%d",&j);
 	for(i =0;i<j ; i++)
 	{
 		temp = malloc(sizeof(struct node));
@@ -36,13 +46,14 @@ int main()
 	temp = head;
 	for(i =0; i<j ; i++)
 	{
-		printf("enter the data for node %d: ",i+1);
-		fflush(stdout);
-		scanf("%d",&k);
-		temp->data = k;
+//		printf("enter the data for node %d: ",i+1);
+//		fflush(stdout);
+//		scanf("%d",&k);
+		temp->data = i;
 		temp = temp -> next;
 	}
 	temp = head;
+	deleteatend(temp);
 	printf("DATA\n");
 	fflush(stdout);
 	for(i =0; i<j ; i++)
@@ -52,5 +63,7 @@ int main()
 		temp = temp -> next;
 	}
 }
+
+
 
 

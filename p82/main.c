@@ -6,15 +6,21 @@ struct node
 	int data;
 	struct node *next; //SELF REFERENTIAL STRUCTURE
 };
-int addatbeg(int d,int *ptr,int *h,int k=k+1)
+void addatbeg(int d,struct node **h)
 {
-	ptr->next=h;
-	h=ptr;
+	struct node *ptr;
+	ptr = malloc(sizeof(struct node));
+	ptr -> data = d;
+	ptr -> next = *h;
+	*h=ptr;
 }
 int main()
 {
 	struct node *head=NULL,*temp,*temp2;
-	int i,j=5,n=10;
+	int i,j,k,n;
+	printf("enter the number of nodes:");
+	fflush(stdout);
+	scanf("%d",&j);
 	for(i =0;i<j ; i++)
 	{
 		temp = malloc(sizeof(struct node));
@@ -35,21 +41,27 @@ int main()
 		}
 	}
 	temp = head;
+	printf("enter a data to add at beginning:");
+	fflush(stdout);
+	scanf("%d",&n);
+	addatbeg(n,&head);
 	for(i =0; i<j ; i++)
 	{
-		temp->data = i;
+		printf("enter the data for node %d: ",i+1);
+		fflush(stdout);
+		scanf("%d",&k);
+		temp->data = k;
 		temp = temp -> next;
 	}
 	temp = head;
+	j=j+1;
 	printf("DATA\n");
+	fflush(stdout);
 	for(i =0; i<j ; i++)
 	{
-		addatbeg(n,temp,head,j);
 		printf("%d\n", temp->data);
 		fflush(stdout);
 		temp = temp -> next;
 	}
-
 }
-
 

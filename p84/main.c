@@ -1,5 +1,4 @@
-//linked a 5 nodes
-//traverse in linked list
+//add in between the nodes
 #include<stdio.h>
 #include<stdlib.h>
 struct node
@@ -7,10 +6,19 @@ struct node
 	int data;
 	struct node *next; //SELF REFERENTIAL STRUCTURE
 };
+
+void addinbetween(int d,struct node *t)
+{
+	struct node *ptr;
+	ptr = malloc(sizeof(struct node));
+	ptr -> data = d;
+	ptr -> next = t -> next;
+	t -> next = ptr;
+}
 int main()
 {
 	struct node *head=NULL,*temp,*temp2;
-	int i,j,k;
+	int i,j,k,n,m;
 	printf("enter the number of nodes:");
 	fflush(stdout);
 	scanf("%d",&j);
@@ -34,6 +42,12 @@ int main()
 		}
 	}
 	temp = head;
+	printf("enter a value after that you want to add a new value:");
+	fflush(stdout);
+	scanf("%d",&m);
+	printf("enter a data to add in between :");
+	fflush(stdout);
+	scanf("%d",&n);
 	for(i =0; i<j ; i++)
 	{
 		printf("enter the data for node %d: ",i+1);
@@ -42,6 +56,7 @@ int main()
 		temp->data = k;
 		temp = temp -> next;
 	}
+	j=j+1;
 	temp = head;
 	printf("DATA\n");
 	fflush(stdout);
@@ -49,6 +64,10 @@ int main()
 	{
 		printf("%d\n", temp->data);
 		fflush(stdout);
+		if(temp->data==m)
+				{
+					addinbetween(n,temp);
+				}
 		temp = temp -> next;
 	}
 }

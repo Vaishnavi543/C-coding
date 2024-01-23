@@ -6,11 +6,22 @@ struct node
 	int data;
 	struct node *next; //SELF REFERENTIAL STRUCTURE
 };
+void addatend(int d,struct node *t)
+{
+	struct node *ptr;
+	ptr = malloc(sizeof(struct node));
+	ptr -> data = d;
+	t -> next = ptr;
+	ptr -> next = NULL;
+}
 int main()
 {
-	struct node *head=NULL,*temp,*temp2,*ptr;
-	int i,j=5;
-	for(i =0;i<j ; i++)
+	struct node *head=NULL,*temp,*temp2;
+	int i,j,k,n;
+	printf("enter the number of nodes:");
+	fflush(stdout);
+	scanf("%d",&j);
+	for(i=0;i<j;i++)
 	{
 		temp = malloc(sizeof(struct node));
 		if(head == NULL)
@@ -30,23 +41,26 @@ int main()
 		}
 	}
 	temp = head;
+	printf("enter a data to add at end:");
+		fflush(stdout);
+		scanf("%d",&n);
 	for(i =0; i<j ; i++)
 	{
-		temp->data = i;
-		temp = temp -> next;
-	}
-	//add node at end
-			{
-				if(temp->next == NULL)
+		printf("enter the data for node %d: ",i+1);
+		fflush(stdout);
+		scanf("%d",&k);
+		temp->data = k;
+		if(temp->next==NULL)
 				{
-				ptr->data=5;
-				ptr->next=head;
-				head=ptr;
+					addatend(n,temp);
 				}
-			}
-			j=j+1;
+		temp = temp -> next;
+
+	}
+	j=j+1;
 	temp = head;
 	printf("DATA\n");
+	fflush(stdout);
 	for(i =0; i<j ; i++)
 	{
 		printf("%d\n", temp->data);
@@ -54,4 +68,6 @@ int main()
 		temp = temp -> next;
 	}
 }
+
+
 
