@@ -7,29 +7,35 @@ struct node
 	struct node *next; //SELF REFERENTIAL STRUCTURE
 };
 
-void deletebykey(int v,struct node *p,struct node *q)
+void deletebykey(int v,struct node *p,struct node **h)
 {
-	if(p->data == v )
+	struct node *pre;
+	if((*h) -> data == v)
 	{
-		p=p->next;
-		p->next=q->next;
-		free(q);
+		*h=p->next;
+		while(p->next!=NULL)
+		{
+			p=p->next;
+		}
 	}
 	else
 	{
-		q=p->next;
-		printf("%d\n", p->data);
-				fflush(stdout);
+		while(p->data != v )
+		{
+			pre=p;
+			p=p->next;
+		}
+		pre->next=p->next;
+		free(p);
 	}
-
 }
 int main()
 {
-	struct node *head=NULL,*temp,*temp2,*temp3;
-	int i,j=5,k,key=1;
-	//	printf("enter the number of nodes:");
-	//	fflush(stdout);
-	//	scanf("%d",&j);
+	struct node *head=NULL,*temp,*temp2;
+	int i,j,k,key=0;
+	printf("enter the number of nodes:");
+	fflush(stdout);
+	scanf("%d",&j);
 	for(i =0;i<j ; i++)
 	{
 		temp = malloc(sizeof(struct node));
@@ -52,23 +58,24 @@ int main()
 	temp = head;
 	for(i =0; i<j ; i++)
 	{
-		//		printf("enter the data for node %d: ",i+1);
-		//		fflush(stdout);
-		//		scanf("%d",&k);
-		temp->data = i;
+		printf("enter the data for node %d: ",i+1);
+		fflush(stdout);
+		scanf("%d",&k);
+		temp->data = k;
 		temp = temp -> next;
 	}
 	temp = head;
-	//	printf("enter key that you want to delete:");
-	//	fflush(stdout);
-	//	scanf("%d",&key);
+	printf("enter key that you want to delete:");
+	fflush(stdout);
+	scanf("%d",&key);
+	deletebykey(key,temp,&head);
+	temp=head;
 	printf("DATA\n");
 	fflush(stdout);
 	for(i =0; i<j ; i++)
 	{
-		deletebykey(key,temp,temp3);
-//		printf("%d\n", temp->data);
-//		fflush(stdout);
+		printf("%d\n", temp->data);
+		fflush(stdout);
 		temp = temp -> next;
 		if(temp==NULL)
 		{

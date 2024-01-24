@@ -1,4 +1,5 @@
-//deleting the last node
+//swap two nodes in a linked list
+//limitation for last node
 #include<stdio.h>
 #include<stdlib.h>
 struct node
@@ -7,21 +8,33 @@ struct node
 	struct node *next; //SELF REFERENTIAL STRUCTURE
 };
 
-void deleteatend(struct node *p)
+void swapnodes(struct node *p,int p1,int p2)
 {
-	struct node *pre;
-	while(p->next!=NULL)
+	struct node *pre,*t1,*t2;
+	int t3;
+	int position=1;
+	while(p->next!= NULL);
 	{
 		pre=p;
 		p=p->next;
+		if(position==p1)
+		{
+			t1=pre;
+			t3=t1->data;
+		}
+		if(position==p2)
+		{
+			t2=pre;
+			t1->data=t2->data;
+			t2->data=t3;
+		}
+		position++;
 	}
-	pre->next=NULL;
-		free(p);
 }
 int main()
 {
 	struct node *head=NULL,*temp,*temp2;
-	int i,j,k;
+	int i,j=5,k,position1=1,position2=5;
 	printf("enter the number of nodes:");
 	fflush(stdout);
 	scanf("%d",&j);
@@ -45,16 +58,22 @@ int main()
 		}
 	}
 	temp = head;
-	for(i =0; i<j ; i++)
+	for(i =1; i<=j ; i++)
 	{
-		printf("enter the data for node %d: ",i+1);
+		printf("enter the data for node %d: ",i);
 		fflush(stdout);
 		scanf("%d",&k);
 		temp->data = k;
 		temp = temp -> next;
 	}
 	temp = head;
-	deleteatend(temp);
+	printf("position 1 for node swapping:");
+	fflush(stdout);
+	scanf("%d",&position1);
+	printf("position 2 for node swapping:");
+	fflush(stdout);
+	scanf("%d",&position2);
+	swapnodes(temp,position1,position2);
 	printf("DATA\n");
 	fflush(stdout);
 	for(i =0; i<j ; i++)
@@ -64,7 +83,5 @@ int main()
 		temp = temp -> next;
 	}
 }
-
-
 
 
