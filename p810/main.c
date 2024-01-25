@@ -1,4 +1,4 @@
-//add at begin in circular linked list
+//add in circular linked list by user define position
 #include<stdio.h>
 #include<stdlib.h>
 struct node
@@ -6,11 +6,14 @@ struct node
 	int data;
 	struct node *next; //SELF REFERENTIAL STRUCTURE
 };
-void addatbeg(struct node *p,struct node **h)
+void addincircular(int d,int position,struct node *p,struct node **h)
 {
-		struct node *ptr,*a=malloc(sizeof(struct node));
-		a->data=5;
-		(*h)->data=p->data;
+	int count=1;
+	struct node *ptr,*pre,*t,*a=malloc(sizeof(struct node));
+	a->data=d;
+	(*h)->data=p->data;
+	if(position==1)
+	{
 		ptr=p->next;
 		while(ptr->next != (*h))
 		{
@@ -19,18 +22,23 @@ void addatbeg(struct node *p,struct node **h)
 		ptr->next=a;
 		a->next=(*h);
 		(*h)=a;
-//		printf("%d",((*h)->data));
-//		fflush(stdout);
-		while(p->next != (*h))
+	}
+	else
+	{
+		while(position!=count)
 		{
+			count++;
+			pre=p;
 			p=p->next;
 		}
-		p=p->next;
-}
+		t=pre->next;
+		a->next=t;
+		pre->next=a;
+	}
 int main()
 {
 	struct node *head=NULL,*temp,*temp2;
-	int i,j=5,k;
+	int i,j=5,k,data=11,pos=4;
 	printf("enter the number of nodes:");
 	fflush(stdout);
 	scanf("%d",&j);
@@ -54,16 +62,22 @@ int main()
 		}
 	}
 	temp = head;
-	for(i =0; i<j ; i++)
+	for(i =1; i<=j ; i++)
 	{
-		printf("enter the data for node %d: ",i+1);
+		printf("enter the data for node %d: ",i);
 		fflush(stdout);
 		scanf("%d",&k);
 		temp->data = k;
 		temp = temp -> next;
 	}
 	temp = head;
-	addatbeg(temp,&head);
+	printf("enter a position:");
+	fflush(stdout);
+	scanf("%d",&pos);
+	printf("enter a data that you want to add:");
+	fflush(stdout);
+	scanf("%d",&data);
+	addincircular(data,pos,temp,&head);
 	temp=head;
 	j=j+1;
 	printf("DATA\n");
