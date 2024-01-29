@@ -8,7 +8,7 @@ int main()
 	char p[50]; //array for the strings
 	int i=0;
 	char **ptr;
-	int count=0;
+	int count=0,j;
 	if((fp=fopen("main.txt","r"))==NULL)
 	{
 		printf("error in opening\n");
@@ -19,36 +19,55 @@ int main()
 	{
 		count++;
 	}
-	printf("number of strings in a file:%d",count);
+	printf("number of strings in a file:%d\n",count);
 	//fflush(stdout);
-	ptr=(char*) malloc (count * (sizeof(char*)));
 	fclose(fp);
 	fp=fopen("main.txt","r");
+	ptr= malloc (count * (sizeof(char)));
 	{
-		while(fgets(ptr[i]=p,50,fp)!=NULL)
-		//for(i=0;i<count;i++)
+		while(fgets(p,50,fp)!=NULL)
+		{
+
+			//ptr[i]=p;
+			ptr[i]=(char*) malloc (100*(sizeof(char)));
+			strcpy(ptr[i],p);
+			i++;
+		}
+		printf("data before sorting\n");
+		fflush(stdout);
+		for(i=0;i<count;i++)
+		{
+			printf("%s\n",ptr[i]);
+			fflush(stdout);
+		}
+		fclose(fp);
+		for(i=0;i<count-1;i++)
+		{
+		for(j=0;j<count-1;j++)
+		{
+			if(strlen(ptr[j])<=strlen(ptr[j+1]))
 			{
 
-				//ptr[i]=p;
-				ptr[i]=(char*) malloc (100*(sizeof(char)));
-//				for(i=0;ptr[i]!='\0';i++)
-//				{
-//					ptr[i]=p[i];
-				scanf("%s",ptr);
-				//fflush(stdout);
-				printf("%s\n",ptr);
-								fflush(stdout);
-//			}
+			}
+			else
+			{
+				char temp[50];
+				strcpy(temp,ptr[j]);
+				strcpy(ptr[j],ptr[j+1]);
+				strcpy(ptr[j+1],temp);
+			}
+		}
+		}
+		printf("data after sorting\n");
+				fflush(stdout);
+		for(i=0;i<count;i++)
+		{
+			printf("%s\n",ptr[i]);
+			fflush(stdout);
+		}
 	}
+}
 
-//	for(i=0;i<count;i++)
-//		{
-//			printf("entered string %d:%s\n",i+1,ptr[i]);
-//			fflush(stdout);
-//		}
-	fclose(fp);
-}
-}
 
 
 

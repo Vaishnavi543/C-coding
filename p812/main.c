@@ -8,29 +8,38 @@ struct node
 };
 void reverse(struct node **h,struct node *p)
 {
-	struct node *pre,*i;
-	int t;
-	t=(*h);
+	int length=1;
+	struct node *q=p;
+	int t1,t2,i,j;
 	while(p->next!=(*h))
 	{
-		pre=p;
+		length++;
 		p=p->next;
 	}
-	t=(*h)->data;
-	(*h)->data=p->data;
-	p->data=t;
-	i=(*h)->next;
-	t=i->data;
-	i->data=pre->data;
-	pre->data=t;
+	p=(*h);
+	{
+		for(i=0;i<(length/2);i++)
+		{
+			t1=p->data;
+			q=(*h);
+			for(j=length;j>i+1;j--)
+			{
+				q=q->next;
+				t2=q->data;
+			}
+			q->data=t1;
+			p->data=t2;
+			p=p->next;
+		}
+	}
 }
 int main()
 {
 	struct node *head=NULL,*temp,*temp2;
 	int i,j=7,k;
-//	printf("enter the number of nodes:");
-//	fflush(stdout);
-//	scanf("%d",&j);
+	printf("enter the number of nodes:");
+	fflush(stdout);
+	scanf("%d",&j);
 	for(i =0;i<j;i++)
 	{
 		temp = malloc(sizeof(struct node));
@@ -53,10 +62,10 @@ int main()
 	temp = head;
 	for(i =1; i<=j ; i++)
 	{
-//		printf("enter the data for node %d: ",i);
-//		fflush(stdout);
-//		scanf("%d",&k);
-		temp->data = i;
+		printf("enter the data for node %d: ",i);
+		fflush(stdout);
+		scanf("%d",&k);
+		temp->data = k;
 		temp = temp -> next;
 	}
 	temp=head;
@@ -74,11 +83,11 @@ int main()
 	printf("Reverse DATA\n");
 	fflush(stdout);
 	for(i =0; i<j ; i++)
-		{
-			printf("%d\n", temp->data);
-			fflush(stdout);
-			temp = temp -> next;
-		}
+	{
+		printf("%d\n", temp->data);
+		fflush(stdout);
+		temp = temp -> next;
+	}
 }
 
 

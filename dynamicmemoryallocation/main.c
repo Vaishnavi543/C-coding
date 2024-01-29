@@ -3,7 +3,7 @@
 #include<stdlib.h>
 int main()
 {
-	int n=0,i;
+	int n=5,i;
 	char **ptr;
 	printf("enter a number of strings:");
 	fflush(stdout);
@@ -11,7 +11,7 @@ int main()
 	fflush(stdout);
 	printf("entered number :%d\n",n);
 	fflush(stdout);
-	*ptr=(char*)malloc(n*(sizeof(char*)));
+	(ptr)=(char*)malloc(n*(sizeof(char)));
 	for(i=0;i<n;i++)
 	{
 		ptr[i]=(char*)malloc(100* (sizeof(char)));

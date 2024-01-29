@@ -5,106 +5,99 @@ struct node{
 	int data;
 	struct node *next;
 }*top=NULL;
+int value=-1;
 void display()
 {
-	if(top==NULL)
-		{
-			printf("stack is underflow");
-			fflush(stdout);
-		}
-	else
+	struct node *temp;
+	temp=top;
+	if(temp==NULL)
 	{
-		while(top->next!=NULL)
-		{
-			printf("%d\n",top->data);
-			fflush(stdout);
-			top=top->next;
-		}
-	}
-}
-void push(int d)
-{
-	struct node *new;
-	new=malloc(sizeof(struct node));
-	if(new==NULL)
-	{
-		printf("stack is overflow");
+		printf("stack is empty\n");
 		fflush(stdout);
 	}
 	else
 	{
+		while(temp->next!=NULL)
+		{
+			printf("%d\n",temp->data);
+			fflush(stdout);
+			temp=temp->next;
+		}
+		printf("%d\n",temp->data);
+		fflush(stdout);
+	}
+}
+void push()
+{
+	struct node *new;
+	int d=10;
+	new=malloc(sizeof(struct node));
+	if(new==NULL)
+	{
+		printf("stack is overflow\n");
+		fflush(stdout);
+	}
+	else
+	{
+		printf("enter a data for push:");
+		fflush(stdout);
+		scanf("%d",&d);
 		new->data=d;
 		new->next=top;
 		top=new;
 	}
-	display();
+
 }
-void pop(struct node **h)
+int pop()
 {
 	struct node *t;
-	if((*h)->next==NULL)
+	//	int value=-1;
+	if(top==NULL)
 	{
-		printf("stack is underflow");
+		printf("stack is EMPTY\n");
 		fflush(stdout);
 	}
-	else
 	{
-		t=(*h);
-	    (*h)=(*h)->next;
-		free(t);
+		if(top->next==NULL)
+		{
+			value=top->data;
+			free(top);
+		}
+		else
+		{
+			t=top;
+			top=top->next;
+			value=t->data;
+			free(t);
+		}
 	}
-	display();
+	return value;
 }
-
 int main()
 {
-	struct node *temp,*temp2;
- 		int i,j=5,k,key=7;
-//		printf("enter the number of nodes:");
-//		fflush(stdout);
-//		scanf("%d",&j);
-		for(i =0;i<j ; i++)
-		{
-			temp = malloc(sizeof(struct node));
-			if(top == NULL)
-			{
-				top = temp;
-				top -> next = NULL;
-			}
-			else
-			{
-				temp2 = top;
-				while(temp2->next != NULL)
-				{
-					temp2 = temp2->next;
-				}
-				temp2->next = temp;
-				temp -> next = NULL;
-			}
-		}
-		temp = top;
-		for(i =0; i<j ; i++)
-		{
-//			printf("enter the data for node %d: ",i+1);
-//			fflush(stdout);
-//			scanf("%d",&k);
-			temp->data = i;
-			temp = temp -> next;
-		}
-		printf("data in the stack before push and pop operation\n");
-		fflush(stdout);
-		temp = top;
-		display();
-		printf("data in the stack after push operation\n");
-		fflush(stdout);
-		temp=top;
-		push(key);
-//		temp=top;
-//		display();
-//		printf("data in the stack after pop operation\n");
-//		fflush(stdout);
-//		temp=top;
-//		pop(&top);
+	struct node *temp;
+	printf("data in the stack before push and pop operation\n");
+	fflush(stdout);
+	temp = top;
+	display();
+	temp=top;
+	push();
+	temp=top;
+	push();
+	//	temp=top;
+	//	push(key);
+	temp=top;
+	printf("data in the stack after push operation\n");
+	fflush(stdout);
+	display();
+	temp=top;
+	pop();
+	printf("popped value is %d\n",value);
+	fflush(stdout);
+	printf("data in the stack after pop operation\n");
+	fflush(stdout);
+	temp=top;
+	display();
 }
 
 
