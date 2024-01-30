@@ -10,35 +10,26 @@
 #include<stdio.h>
 #include<string.h>
 int main()
-
 {
-	char s1[]="abc //xyz";
-	int i,j=0;
-	char s2[100];
-//	char s2[100];
-//	int i=0,j=0;
+	char s1[]="abc xyz pqr // abc xyz pqr ";
+	int i=0,j=1;
 	printf("entered string is = %s",s1);
-	scanf("%s",s1);
-	fflush(stdout);
-
 	for(i=0;s1[i];i++)
 	{
 		if(s1[i]=='/' && s1[i+1]=='/')
 		{
 			while(s1[i]!='\n' && s1[i]!='\0')
 			{
+				j++;
 				i++;
 			}
 		}
-		else
-		{
-			s1[i++]=s2[j++];
-		}
 	}
-	s2[j]='\0';
-
-	printf("comment removed string= %s",s2[j]);
-	return 0;
+	j++;
+	s1[i-j]=s1[i];
+	s1[i]='\0';
+	printf("\ncomment removed string = %s",s1);
+	fflush(stdout);
 }
 
 

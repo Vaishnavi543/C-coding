@@ -38,24 +38,19 @@ char reverse(char* s)
 	int temp=0;
 	for(j=0;s[j];j++);
 	length=j-1;
-
-			temp=s[i];
-			s[i]=s[length-i];
-			s[length-i]=temp;
-			if (i!=(length/2))
-			{
-			++i;
-				reverse(s);
-			}
-			//s[i]='\0';
-
-
+	temp=s[i];
+	s[i]=s[length-i];
+	s[length-i]=temp;
+	if (i!=(length/2))
+	{
+		++i;
+		reverse(s);
+	}
 }
 
 int main()
 {
 	char a[]="1234";
-	//	char b[10];
 	reverse(a);
 	printf("%s",a);
 }

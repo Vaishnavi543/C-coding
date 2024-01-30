@@ -12,7 +12,7 @@ int main()
 	int i,j=0,temp=0;
 	int a[]={'A','b','C','D','e','a','B','c'};
 	for(i=0;i<9;i++)
-		{
+	{
 		for(j=i;j<9;j++)
 		{
 			if(a[i]==(a[j]-32))
@@ -24,9 +24,7 @@ int main()
 		}
 		printf("%c ",a[i]);
 		temp=0;
-		}
-
-
+	}
 }
 
 

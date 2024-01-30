@@ -40,28 +40,19 @@ int main()
 #if 1
 //atoi
 #include<stdio.h>
-#include<string.h>
-#include<math.h>
 int main()
 {
 	char a[]="12345";
 	int i=0,length=0,s=0,j,k=0;
-	//	printf("length of the array=%d",strlen(a));
-	//	scanf("%d",length);
 	for(i=0;a[i];i++);
 	length=i-1;
-
+	for(j=0;j<=length;j++)
 	{
-		//while(j<=length)
-		for(j=0;j<=length;j++)
-		{
-			s=(s*10+a[j]-'0');
-
-		}
-		printf("%d",s);
-
+		s=(s*10+a[j]-'0');
 	}
+	printf("%d",s);
 }
+
 #endif
 
 

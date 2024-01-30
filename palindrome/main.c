@@ -8,7 +8,7 @@
 #include<string.h>
 int main()
 {
-	int a=22,k,s;
+	int a=246642,k,s;
 	char a1[10];
 	int i=0;
 	int length;

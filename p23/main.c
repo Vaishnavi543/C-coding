@@ -16,12 +16,11 @@ int main()
 	int i=0 ;
 	printf("enter a string:");
 	fflush(stdout);
-	scanf("%s",s);
+	scanf("%[^\n]",s);
 	{
-	for(i=0;s[i];i++)
-	 {
-
-		printf("%c%c ",a[s[i]/16], a[s[i]%16]);
-	 }
+		for(i=0;s[i];i++)
+		{
+			printf("%c%c ",a[s[i]/16], a[s[i]%16]);
+		}
 	}
 }

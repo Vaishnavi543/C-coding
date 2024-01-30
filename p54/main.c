@@ -24,16 +24,15 @@ char stringend(char* s,char* t)
 		{
 			flag=0;
 		}
-
 	}
-	if(flag)
-			{
-				printf("1");
-			}
-			else
-			{
-				printf("0");
-			}
+	if(flag==1)
+	{
+		printf("1");
+	}
+	else
+	{
+		printf("0");
+	}
 
 }
 int main()
@@ -41,7 +40,6 @@ int main()
 	char a[20]="hello how are you";
 	char b[]=" how are you";
 	stringend(a,b);
-	//printf("abc");
 }
 
 

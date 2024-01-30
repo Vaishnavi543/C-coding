@@ -27,18 +27,12 @@ int main()
 		if((r[i]>='0' && r[i]<='9') || r[i]==' ')
 		{
 			d[k]=r[i];
-			//int p=r[i]-'0';
-
 		}
-
 		else
 		{
 			d[k]='\0';
-			//printf("%s\n",d);
-						fflush(stdout);
 			break;
 		}
-
 	}
 	for(j=0;r[i];j++,i++)
 	{
@@ -69,15 +63,12 @@ int main()
 		if(s[j]!=' ')
 		{
 			v=calc( x,s[j], y);
-			//printf("%d",v);
-			//scanf("%d",&v);
 			w=calc( v,s[j+2],z);
-			//printf("%d",w);
-			//scanf("%d",&w);
+			printf("%d",w);
+			fflush(stdout);
 			break;
 		}
 	}
-
 }
 
 

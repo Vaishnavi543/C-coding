@@ -10,19 +10,18 @@
 int  main ()
 {
 	int c;
-	   while ((c=getchar())!='z')
-	   {
-		   if(c!=' ')
-		   {
-
-			   putchar(c);
-	   }
-		   else
-		   {
-			   printf("/n");
-		   }
-		   }
-	   return 0;
+	while ((c=getchar())!='z')
+	{
+		if(c!=' ')
+		{
+			putchar(c);
+		}
+		else
+		{
+			printf("/n");
+		}
 	}
+	return 0;
+}
 
 

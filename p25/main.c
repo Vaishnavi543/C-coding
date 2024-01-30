@@ -9,16 +9,13 @@
 #include<stdio.h>
 unsigned int setbits(unsigned int x,int p,int n,int y)
 {
-    //return (x | (y>> (p + 1 - n)));
 	return(x|(y<<(p+1+n)));
 }
-int main(void)
+int main()
 {
     int x = 0xf0, n=2 ,y=1, p=0;
     int z = setbits(x,p,n,y);
     printf("%x",z);
-
-    return 0;
 }
 
 

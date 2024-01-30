@@ -10,25 +10,22 @@
 #include<stdio.h>
 int  main ()
 {
-   int c;
-   while ((c=getchar())!='z')
-
-   {
-	   if(c=='\t')
-   {
-	   printf("\t");
-   }
-	   if(c=='\b')
-	   {
-		   printf("\b");
-	   }
-	   if(c=='\\')
-			   {
-					   printf("\\");
-			   }
-
-
-   putchar(c);
-}
+	int c;
+	while ((c=getchar())!='z')
+	{
+		if(c=='\t')
+		{
+			printf("\t");
+		}
+		if(c=='\b')
+		{
+			printf("\b");
+		}
+		if(c=='\\')
+		{
+			printf("\\");
+		}
+		putchar(c);
+	}
 }
 

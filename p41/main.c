@@ -12,11 +12,10 @@
 #include "mystrlen.h"
 int strrindex(char *s,char a)
 {
-
 	int length;
 	int i;
 	length=mystrlen(s);
-	printf("%d\n",length);
+	printf("total length:%d\n",length);
 	fflush(stdout);
 	for(i=length-1;i>=0;i--)
 	{
@@ -25,8 +24,6 @@ int strrindex(char *s,char a)
 			return length-i;
 			break;
 		}
-
-
 	}
 	return -1;
 }

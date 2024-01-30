@@ -8,25 +8,20 @@
 #include<stdio.h>
 #include<string.h>
 int main()
-
 {
 	char s1[100];
 	char s2[100];
-	int length=0;
-	int i=0,j=0 ;
-
+	int i=0,j=0,length=0;
 	printf("enter a string:");
 	fflush(stdout);
 	scanf("%[^\n]",s1);
-	fflush(stdout);
-	printf("length of the string is :%d\n",strlen(s1));
-
 	length = strlen(s1);
+	printf("length of the string is :%d\n",length);
+	fflush(stdout);
 	for(i=length-1;i>=0;i--)
 	{
-
 		s2[j++]=s1[i];
-		}
+	}
 	s2[j]='\0';
 	printf("entered string:%s\n",s1);
 	fflush(stdout);

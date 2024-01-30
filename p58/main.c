@@ -20,13 +20,13 @@ int main()
 {
 	int year=4000,month=13,day;
 	if(month>12)
-		{
-			printf("invalid month\n");
-		}
+	{
+		printf("invalid month\n");
+	}
 	else{
-	printf("%d | %d |",year,month);
-	int d=dayofyear(year,month,day);
-printf(" %d",d);
-}
+		printf("%d | %d |",year,month);
+		int d=dayofyear(year,month,day);
+		printf(" %d",d);
+	}
 }
 

@@ -14,7 +14,6 @@ char stringncat(char* s,char* t,int n)
 	k=i;
 	for(j=0;j<=n;j++)
 	{
-
 		s[k]=t[j];
 		k++;
 	}

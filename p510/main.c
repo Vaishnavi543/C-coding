@@ -28,14 +28,13 @@ int main()
 		fflush(stdout);
 	}
 	printf("\n \n");
+	fflush(stdout);
 	for(m=14;m>=5;m--)
 	{
 		printf("%s\n",p[m]);
 		fflush(stdout);
 	}
 }
-//ptr = ( cast_ type *) malloc (byte_size);
-//p=(int *)malloc(numofe*sizeof(int));
 
 
 

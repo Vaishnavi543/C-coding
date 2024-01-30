@@ -12,13 +12,13 @@ int main()
 	char a[]="+123";
 	int i=0;
 	int sum=0,sign=0;
+	printf("%s\n",a);
+				fflush(stdout);
 	sign = (a[i]=='-'? (-1) : 1);
 	for(i=0;a[i];i++)
 	{
 		if ((a[i]>='0' && a[i]<='9'))
 		{
-			printf("%s\n",a);
-			fflush(stdout);
 			sum=sum*10+(a[i]-'0');
 		}
 	}

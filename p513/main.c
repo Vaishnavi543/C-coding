@@ -10,17 +10,16 @@ int length;
 int largest(int* a)
 {
 	static int large;
-     if(length>0)
+	if(length>0)
 	{
-	if(large<=*a)
-	{
-		large=*a;
+		if(large<=*a)
+		{
+			large=*a;
+		}
+		length--;
+		largest(a+1);
+		return large;
 	}
-	length--;
-	largest(a+1);
-
-	return large;
-}
 }
 int main()
 {

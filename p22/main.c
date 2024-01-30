@@ -15,7 +15,7 @@ int main()
 	int lim;
 	for(i=0; ;i++)
 	{
-		if (i>=(lim-1))
+		if(i>=(lim-1))
 		{
 			break;
 		}
@@ -30,11 +30,8 @@ int main()
 				i++;
 			}
 		}
-
 	}
-
 	printf("hello");
-
 }
 
 

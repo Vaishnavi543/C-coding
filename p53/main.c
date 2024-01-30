@@ -11,9 +11,7 @@ char stringcat(char* s,char* t)
 {
 	int i,j=0,k;
 	for(i=0;s[i];i++);
-	{
-		k=i;
-	}
+	k=i;
 	for(j=0;t[j];j++)
 	{
 		s[k]=t[j];
